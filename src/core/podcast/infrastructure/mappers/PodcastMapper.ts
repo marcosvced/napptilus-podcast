@@ -1,8 +1,8 @@
-import type {Mapper} from '~/src/core/common/adapters/mappers/Mapper'
+import type {Mapper} from '~/src/core/common/infrastructure/mappers/Mapper'
 import type {PodcastModule} from '~/src/core/podcast/domain/entities/Podcast'
-import type {PodcastDto} from '~/src/core/podcast/adapters/dtos/PodcastDto'
+import type {PodcastDto} from '~/src/core/podcast/infrastructure/dtos/PodcastDto'
 import {Podcast} from '~/src/core/podcast/domain/entities/Podcast'
-import type {MediaDto} from '~/src/core/common/adapters/dtos/MediaDto'
+import type {MediaDto} from '~/src/core/common/infrastructure/dtos/MediaDto'
 import {Media} from '~/src/core/common/domain/entities/Media'
 import {compact} from '~/src/core/common/helpers/compact'
 

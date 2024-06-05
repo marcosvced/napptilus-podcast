@@ -1,3 +1,3 @@
-export function compact(arr: any[]) {
+export function compact(arr: []) {
     return arr.filter((item) => !!item)
 }

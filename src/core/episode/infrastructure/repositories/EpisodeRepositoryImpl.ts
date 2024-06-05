@@ -1,16 +1,16 @@
 import type {PodcastId} from '~/src/core/podcast/domain/entities/PodcastId'
-import type {Mapper} from '~/src/core/common/adapters/mappers/Mapper'
-import type {ApiClient} from '~/src/core/common/adapters/api/ApiClient'
+import type {Mapper} from '~/src/core/common/infrastructure/mappers/Mapper'
+import type {ApiClient} from '~/src/core/common/infrastructure/api/ApiClient'
 import type {ApiResponse} from '~/src/core/common/domain/entities/ApiResponse'
 import type {EpisodeRepository} from '~/src/core/episode/domain/ports/EpisodeRepository'
-import type {EpisodeResultsDto} from '~/src/core/episode/adapters/dtos/EpisodeResultsDto'
+import type {EpisodeResultsDto} from '~/src/core/episode/infrastructure/dtos/EpisodeResultsDto'
 import type {Episode} from '~/src/core/episode/domain/entities/Episode'
-import type {EpisodeDto} from '~/src/core/episode/adapters/dtos/EpisodeDto'
+import type {EpisodeDto} from '~/src/core/episode/infrastructure/dtos/EpisodeDto'
 
 export class EpisodeRepositoryImpl implements EpisodeRepository {
     constructor(
         private readonly apiClient: ApiClient,
-        private readonly mapper: Mapper<Episode, EpisodeDto>,
+        private readonly mapper: Pick<Mapper<Episode, EpisodeDto>, 'toDomainList'>,
     ) {
     }
 

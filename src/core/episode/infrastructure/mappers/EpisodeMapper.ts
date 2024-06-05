@@ -1,6 +1,6 @@
-import type {Mapper} from '~/src/core/common/adapters/mappers/Mapper'
+import type {Mapper} from '~/src/core/common/infrastructure/mappers/Mapper'
 import {Episode} from '~/src/core/episode/domain/entities/Episode'
-import type {EpisodeDto} from '~/src/core/episode/adapters/dtos/EpisodeDto'
+import type {EpisodeDto} from '~/src/core/episode/infrastructure/dtos/EpisodeDto'
 
 export class EpisodeMapper implements Pick<Mapper<Episode, EpisodeDto>, 'toDomain' | 'toDomainList'> {
     toDomain(dto: EpisodeDto): Episode {

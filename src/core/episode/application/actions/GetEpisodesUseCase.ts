@@ -1,4 +1,4 @@
-import {Command} from '~/src/core/common/application/Command'
+import {Command} from '~/src/core/common/application/actions/Command'
 import type {PodcastId} from '~/src/core/podcast/domain/entities/PodcastId'
 import type {Episode} from '~/src/core/episode/domain/entities/Episode'
 import type {EpisodeRepository} from '~/src/core/episode/domain/ports/EpisodeRepository'

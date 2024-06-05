@@ -1,4 +1,4 @@
-import type {ApiClient, ApiClientOptions} from '~/src/core/common/adapters/api/ApiClient'
+import type {ApiClient, ApiClientOptions} from '~/src/core/common/infrastructure/api/ApiClient'
 import type {ApiResponse} from '~/src/core/common/domain/entities/ApiResponse'
 import {ofetch} from 'ofetch'
 import {ResponseStatus} from '~/src/core/common/domain/entities/ResponseStatus'

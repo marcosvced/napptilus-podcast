@@ -10,10 +10,10 @@ export default [
             globals: globals.browser
         },
         rules: {
-            'semi': ['error', 'never'],
-            'quotes': ['error', 'single'],
-            'yoda': ['error', 'always']
-        }
+            semi: ['error', 'never'],
+            quotes: ['error', 'single'],
+            yoda: ['error', 'always'],
+        },
     },
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
