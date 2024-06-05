@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {onMounted} from "vue";
-import {ApiClientImpl} from "~/src/ApiClientImpl";
+import {ApiClientImpl} from "~/src/core/common/adapters/api/ApiClientImpl";
 
 import {GetEpisodesUseCase} from "~/src/core/episode/application/actions/GetEpisodesUseCase";
 import {EpisodeRepositoryImpl} from "~/src/core/episode/adapters/repositories/EpisodeRepositoryImpl";
@@ -8,8 +8,8 @@ import {EpisodeMapper} from "~/src/core/episode/adapters/mappers/EpisodeMapper";
 import {PodcastMapper} from "~/src/core/podcast/adapters/mappers/PodcastMapper";
 import {PodcastRepositoryImpl} from "~/src/core/podcast/adapters/repositories/PodcastRepositoryImpl";
 import {GetPodcastsUseCase} from "~/src/core/podcast/actions/GetPodcastsUseCase";
-import type {Episode} from "~/src/core/episode/domain/entities/Episode";
 import type {Podcast} from "~/src/core/podcast/domain/entities/Podcast";
+import type {Episode} from "~/src/core/episode/domain/entities/Episode";
 
 const apiClient = new ApiClientImpl('https://itunes.apple.com')
 const mapper = new EpisodeMapper()
