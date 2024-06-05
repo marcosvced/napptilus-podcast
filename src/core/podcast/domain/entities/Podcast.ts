@@ -28,12 +28,5 @@ export class Podcast implements PodcastModule {
         this.summary = summary
     }
 
-    get episodesLength() {
-        return this.episodes.length
-    }
-
-    set setEpisodes(episodes: Episode[]) {
-        this.episodes.push(...episodes)
-    }
 
 }
