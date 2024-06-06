@@ -15,7 +15,7 @@ export abstract class Ploc<S> implements Observer {
     }
 
     get state(): S {
-        return (this.internalState ?? {}) as S
+        return (this.internalState ?? undefined) as S
     }
 
     updateState(state: S) {

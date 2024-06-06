@@ -13,6 +13,7 @@ export default [
             semi: ['error', 'never'],
             quotes: ['error', 'single'],
             yoda: ['error', 'always'],
+            '@typescript-eslint/no-explicit-any': 'off'
         },
     },
     pluginJs.configs.recommended,

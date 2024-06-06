@@ -10,13 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
+    "remove": "^0.1.5",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.4.0",
-    "eslint": "9.x",
+    "@nuxt/eslint-config": "^0.3.13",
+    "eslint": "^9.4.0",
     "eslint-plugin-vue": "^9.26.0",
     "globals": "^15.3.0",
     "typescript": "^5.4.5",

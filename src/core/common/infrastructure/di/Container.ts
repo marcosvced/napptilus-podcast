@@ -1,4 +1,8 @@
-export type Dependencies = 'GamePloc' | 'GuessPloc'
+export enum Dependencies {
+    GET_EPISODES = 'GetEpisodesUseCase',
+    GET_PODCASTS = 'GetPodcastsUseCase',
+    API_CLIENT = 'APIClient'
+}
 
 export class Container {
     private readonly dependencies: Map<Dependencies, object> = new Map<Dependencies, object>()

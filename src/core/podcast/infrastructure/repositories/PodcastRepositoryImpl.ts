@@ -15,8 +15,7 @@ export class PodcastRepositoryImpl implements PodcastRepository {
 
 
     async getPodcasts(limit: number): Promise<Podcast[]> {
-        const url = `/us/rss/toppodcasts/limit=${limit}/genre=1310/json`
-        const {data:{feed:{entry}}}: ApiResponse<TopPodcastsDto> = await this.apiClient.get<TopPodcastsDto>(url)
+        const {data: {feed: {entry}}}: ApiResponse<TopPodcastsDto> = await this.apiClient.get<TopPodcastsDto>('/podcasts', {query: {limit}})
         return this.mapper.toDomainList(entry)
     }
 

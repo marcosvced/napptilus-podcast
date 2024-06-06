@@ -1,6 +1,7 @@
 import type {EpisodeId} from '~/src/core/episode/domain/entities/EpisodeId'
+import {Model} from '~/src/core/common/domain/entities/Model'
 
-export interface EpisodeModule {
+export interface EpisodeModel {
     id: EpisodeId
     title: string
     date: Date
@@ -9,7 +10,7 @@ export interface EpisodeModule {
     url: string
 }
 
-export class Episode implements EpisodeModule {
+export class Episode extends Model implements EpisodeModel {
     date: Date
     description: string
     duration: number
@@ -17,7 +18,8 @@ export class Episode implements EpisodeModule {
     title: string
     url: string
 
-    constructor({date, description, duration, id, title, url}: EpisodeModule) {
+    constructor({date, description, duration, id, title, url}: EpisodeModel) {
+        super()
         this.date = date
         this.description = description
         this.duration = duration

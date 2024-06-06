@@ -1,15 +1,18 @@
+import {Model} from '~/src/core/common/domain/entities/Model'
+
 type MediaUrl = {
     x1: string
     x2: string
 }
 
-interface MediaModule {
+interface MediaModel {
     url: MediaUrl
 }
 
-export class Media implements MediaModule {
+export class Media extends Model implements MediaModel {
     url: MediaUrl
-    constructor({ url }: MediaModule) {
+    constructor({ url }: MediaModel) {
+        super()
         this.url = url
     }
 }

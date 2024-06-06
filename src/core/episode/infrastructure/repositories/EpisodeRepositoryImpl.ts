@@ -15,13 +15,9 @@ export class EpisodeRepositoryImpl implements EpisodeRepository {
     }
 
     async getEpisodes(id: PodcastId): Promise<Episode[]> {
-        // https://itunes.apple.com/lookup?id=1535809341&media=podcast&entity=podcastEpisode&limit=20
-        const {data: {results}}: ApiResponse<EpisodeResultsDto> = await this.apiClient.get<EpisodeResultsDto>('/lookup', {
-            params:{},
+        const {data: {results}}: ApiResponse<EpisodeResultsDto> = await this.apiClient.get<EpisodeResultsDto>('/episodes', {
             query: {
                 id,
-                media: 'podcast',
-                entity: 'podcastEpisode',
                 limit: 20
             }
         })

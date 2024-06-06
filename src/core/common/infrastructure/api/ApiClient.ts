@@ -1,9 +1,9 @@
 import type {ApiResponse} from '~/src/core/common/domain/entities/ApiResponse'
 
 export interface ApiClientOptions {
-    params: object
-    query: object
-    body: object
+    params?: object
+    query?: object
+    body?: object
 }
 
 export interface ApiClient {

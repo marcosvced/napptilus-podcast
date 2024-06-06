@@ -13,7 +13,9 @@ export class IndexDB {
     }
 
     open(): Promise<void> {
+
         return new Promise((resolve, reject) => {
+
             const request = indexedDB.open(this.dbConfig.dbName, this.dbConfig.dbVersion)
 
             request.onerror = () => {

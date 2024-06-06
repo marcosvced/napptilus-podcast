@@ -1,8 +1,9 @@
 import type {PodcastId} from '~/src/core/podcast/domain/entities/PodcastId'
 import type {Episode} from '~/src/core/episode/domain/entities/Episode'
 import {Media} from '~/src/core/common/domain/entities/Media'
+import {Model} from '~/src/core/common/domain/entities/Model'
 
-export interface PodcastModule {
+export interface PodcastModel {
     id: PodcastId
     img: Media
     title: string
@@ -11,7 +12,7 @@ export interface PodcastModule {
     episodes?: Episode[]
 }
 
-export class Podcast implements PodcastModule {
+export class Podcast extends Model implements PodcastModel {
     author: string
     summary: string
     episodes: Episode[]
@@ -19,7 +20,8 @@ export class Podcast implements PodcastModule {
     img: Media
     title: string
 
-    constructor({id, author, episodes, img, title, summary}: PodcastModule) {
+    constructor({id, author, episodes, img, title, summary}: PodcastModel) {
+        super()
         this.id = id
         this.author = author
         this.episodes = episodes ?? []
