@@ -12,9 +12,8 @@ const podcast = podcastStore.getPodcast(id)
 <template>
   <main class="p-podcast">
     <article v-if="podcast" class="p-podcast__sidebar">
-      <figure class="sidebar__figure">
-        <img :src="podcast.img.url.x2" alt="">
-      </figure>
+      <nuxt-picture class="sidebar__figure" format="webp" :src="podcast.img.url.x2" height="170"/>
+
       <div class="sidebar__info">
         <span class="info__title">{{ podcast.title }}</span>
         <span class="info__author">{{ podcast.author }}</span>

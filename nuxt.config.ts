@@ -2,8 +2,11 @@
 export default defineNuxtConfig({
     devtools: {enabled: true},
     plugins: [
-        {src: '~/src/plugins/DependencyLocator.ts'},
-        {src: '~/src/plugins/Serializer.ts'},
+        {src: '~/src/lib/plugins/DependencyLocator.ts'},
+        {src: '~/src/lib/plugins/Serializer.ts'},
+    ],
+    css: [
+      '~/src/lib/assets/styles/css/main.css'
     ],
     pages: true,
     dir: {
@@ -15,9 +18,7 @@ export default defineNuxtConfig({
             PODCAST_BASE_URL: process.env.PODCAST_BASE_URL
         }
     },
-    modules: [
-        '@pinia/nuxt',
-    ],
+    modules: ['@pinia/nuxt', '@unocss/nuxt', '@nuxt/image'],
     experimental: {
         renderJsonPayloads: true
     }
