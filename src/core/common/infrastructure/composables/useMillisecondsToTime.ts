@@ -3,6 +3,9 @@ import {compact} from '~/src/core/common/helpers/compact'
 export const useMillisecondsToTime = (ms: number, options?: {
     format: 'HH:MM:SS' | 'HH:MM'
 }) => {
+    if(!ms){
+        return
+    }
     const date = new Date(ms)
     const format = (options?.format ?? 'HH:MM:SS').split(':')
     const time = format.map((split) => {

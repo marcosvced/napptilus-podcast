@@ -3,11 +3,16 @@ import {episodePresenter} from '~/src/core/episode/presenter/EpisodePresenter'
 
 const {params: {episodeId}} = useRoute()
 const store = episodePresenter()
-const episode = store.getEpisode(parseInt(episodeId))
+const episode = ref()
+try {
+  episode.value = store.getEpisode(parseInt(episodeId))
+} catch (e) {
+  console.error(e)
+}
 </script>
 
 <template>
-  <div class="p-podcast__episode -depth(100) -p-x(4) -p-y(4)">
+  <div class="p-podcast__episode -depth(100) -p-x(4) -p-y(4)" v-if="episode">
     <h2 class="episode__header -m-b(8)">
       {{ episode.title }}
     </h2>
@@ -19,9 +24,10 @@ const episode = store.getEpisode(parseInt(episodeId))
 </template>
 
 <style scoped>
-.p-podcast__episode{
+.p-podcast__episode {
   height: fit-content;
 }
+
 audio {
   width: 100%;
   height: calc(calc(28 / 16) * 1rem);

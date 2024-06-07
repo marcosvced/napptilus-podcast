@@ -2423,7 +2423,7 @@
     "@vueuse/shared" "10.10.0"
     vue-demi ">=0.14.7"
 
-"@vueuse/core@10.10.0", "@vueuse/core@^10.9.0":
+"@vueuse/core@10.10.0", "@vueuse/core@^10.10.0", "@vueuse/core@^10.9.0":
   version "10.10.0"
   resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-10.10.0.tgz#05a98d3c5674762455a2c552c915d461d83e6490"
   integrity sha512-vexJ/YXYs2S42B783rI95lMt3GzEwkxzC8Hb0Ndpd8rD+p+Lk/Za4bd797Ym7yq4jXqdSyj3JLChunF/vyYjUw==
@@ -2446,6 +2446,17 @@
   version "10.10.0"
   resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-10.10.0.tgz#53e61e9380670e342cbe6e03d852f3319308cb5b"
   integrity sha512-UNAo2sTCAW5ge6OErPEHb5z7NEAg3XcO9Cj7OK45aZXfLLH1QkexDcZD77HBi5zvEiLOm1An+p/4b5K3Worpug==
+
+"@vueuse/nuxt@^10.10.0":
+  version "10.10.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/nuxt/-/nuxt-10.10.0.tgz#d08bc0aed8be44077e841546a0ee9a3e9b91c26c"
+  integrity sha512-l8uFNuFASmcjPEaKAbigUrQZDtVQ9wRTfbuIBEpr3oAGnYtXGwBoQqYGnZopUR1Kdh8qiurpKuwvzVQnrzDjyw==
+  dependencies:
+    "@nuxt/kit" "^3.11.2"
+    "@vueuse/core" "10.10.0"
+    "@vueuse/metadata" "10.10.0"
+    local-pkg "^0.5.0"
+    vue-demi ">=0.14.7"
 
 "@vueuse/shared@10.10.0":
   version "10.10.0"

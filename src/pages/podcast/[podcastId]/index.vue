@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import {episodePresenter} from '~/src/core/episode/presenter/EpisodePresenter'
-import {useMillisecondsToTime} from '../../../core/common/infrastructure/composables/useMillisecondsToTime'
+import {useMillisecondsToTime} from '~/src/core/common/infrastructure/composables/useMillisecondsToTime'
 
 const store = episodePresenter()
 const {params: {podcastId: id}} = useRoute()
-await useAsyncData('episodes', () => store.getEpisodes(id))
 </script>
 
 <template>
@@ -22,7 +21,7 @@ await useAsyncData('episodes', () => store.getEpisodes(id))
         <nuxt-link :to="{name:'podcast-podcastId-episode-episodeId', params:{podcastId:id, episodeId: episode.id}}">
           <span>{{ episode.title }}</span>
         </nuxt-link>
-        <span>{{ episode.date.toLocaleDateString() }}</span>
+        <span>{{ new Date(episode.date).toLocaleDateString() }}</span>
         <span>{{ useMillisecondsToTime(episode.duration, {format: "HH:MM"}) }}</span>
       </li>
     </ul>

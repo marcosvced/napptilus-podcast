@@ -5,13 +5,23 @@ import {episodePresenter} from '~/src/core/episode/presenter/EpisodePresenter'
 const podcastStore = podcastPresenter()
 const episodeStore = episodePresenter()
 const {params: {podcastId: id}} = useRoute()
-await useAsyncData('episodes', () => episodeStore.getEpisodes(id))
-const podcast = podcastStore.getPodcast(id)
+
+const podcast = ref()
+
+useLoadingIndicator().start()
+onBeforeMount(async () => {
+  await episodeStore.getEpisodes(id)
+  try {
+    podcast.value = podcastStore.getPodcast(id)
+  } catch (e) {
+    console.error(e)
+  }
+})
 </script>
 
 <template>
-  <main class="p-podcast -grid -columns(24) -p-y(8)">
-    <article v-if="podcast" class="p-podcast__sidebar -depth(100) -column-start(2) -column-span(4) -p-x(4) -p-y(8)">
+  <main class="p-podcast -grid -columns(24) -p-y(8)" v-if="podcast">
+    <article class="p-podcast__sidebar -depth(100) -column-start(2) -column-span(4) -p-x(4) -p-y(8)">
       <nuxt-picture class="sidebar__figure -p-b(4)" format="webp" :src="podcast.img.url.x2" height="170" width="170"/>
 
       <div class="sidebar__info -p-y(4)">
@@ -51,13 +61,16 @@ const podcast = podcastStore.getPodcast(id)
 
 .sidebar__description {
   @apply -width(100%);
+
   .description__title {
-    font-size: calc(calc(14/16) * 1rem);
+    font-size: calc(calc(14 / 16) * 1rem);
   }
+
   > * {
     display: block;
   }
 }
+
 .description__title,
 .info__title {
   font-weight: bolder;

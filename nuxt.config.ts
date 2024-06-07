@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         {src: '~/src/lib/plugins/Serializer.ts'},
     ],
     css: [
-      '~/src/lib/assets/styles/css/main.css'
+        '~/src/lib/assets/styles/css/main.css'
     ],
     pages: true,
     dir: {
@@ -18,7 +18,12 @@ export default defineNuxtConfig({
             PODCAST_BASE_URL: process.env.PODCAST_BASE_URL
         }
     },
-    modules: ['@pinia/nuxt', '@unocss/nuxt', '@nuxt/image'],
+    modules: [
+        '@pinia/nuxt',
+        '@unocss/nuxt',
+        '@nuxt/image',
+    ],
+
     experimental: {
         renderJsonPayloads: true
     }

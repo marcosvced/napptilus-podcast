@@ -17,7 +17,6 @@ export class PodcastMapper implements Pick<Mapper<Podcast, PodcastDto>, 'toDomai
 
         const imgList = compact(images.map((img: MediaDto) => {
             if ('55' !== img.attributes.height) {
-                console.log(img.label)
                 return img.label
             }
         }))

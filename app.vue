@@ -3,7 +3,10 @@ import {podcastPresenter} from '~/src/core/podcast/presenters/PodcastPresenter'
 import MHeader from '~/src/lib/ui/molecules/m-header.vue'
 
 const store = podcastPresenter()
-await useAsyncData('podcastStore', () => store.getPodcasts())
+useLoadingIndicator().start()
+onBeforeMount(async () => {
+  await store.getPodcasts()
+})
 
 </script>
 
