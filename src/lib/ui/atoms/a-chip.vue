@@ -11,8 +11,8 @@
 .a-chip {
   display: block;
   width: min-content;
-  background-color: cornflowerblue;
+  background-color: theme('colors.primary');
   color: white;
-  border-radius: 4px;
+  border-radius: calc(calc(4/16) * 1rem);
 }
 </style>

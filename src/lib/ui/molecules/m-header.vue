@@ -14,7 +14,7 @@ const {isLoading} = useLoadingIndicator()
 <style scoped lang="css">
 header {
   border-bottom: 1px solid gray;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

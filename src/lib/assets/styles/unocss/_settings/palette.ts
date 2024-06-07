@@ -1,14 +1,15 @@
 const ash = {
-    ash: 'hsla(60, 7%, 6%, 1)'
+    ash: '#4E4B66'
 }
 
 const light = {
-    light: 'hsla(60, 100%, 95%, 1)',
-    'light-080': 'hsla(60, 100%, 90%, 1)',
+    light: 'white',
+    'light-100': '#D9DBE9',
+    'light-200': '#B2B4BF',
 }
 
 const primary = {
-    primary: 'hsla(33, 42%, 60%, 1)'
+    primary: '#005BD4'
 }
 
 export const colors = {

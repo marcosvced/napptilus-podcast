@@ -12,9 +12,9 @@ const onInput = (event: any) => {
 
 <style scoped>
 input {
-  border-radius: 4px;
-  background-color: white;
-  border: 1px solid #D9DBE9;
-  color: #4E4B66;
+  border-radius: calc(calc(4/16) * 1rem);
+  background-color: theme('colors.light');
+  border: calc(calc(1/16) * 1rem) solid theme('colors.light-100');
+  color: theme('colors.ash');
 }
 </style>
