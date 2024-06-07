@@ -3,9 +3,9 @@ const {isLoading} = useLoadingIndicator()
 </script>
 
 <template>
-  <header class="m-header">
+  <header class="m-header -p-x(4)">
     <nuxt-link to="/">
-      Podcaster
+      <b>Podcaster</b>
     </nuxt-link>
     <div class="loader" v-if="isLoading"></div>
   </header>
@@ -13,14 +13,16 @@ const {isLoading} = useLoadingIndicator()
 
 <style scoped lang="css">
 header {
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid theme('colors.light-100');
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  height: 65px;
+  z-index: 999;
+  background-color: theme('colors.light');
+  height: calc(calc(65 / 16) * 1rem);
 }
 
 /* HTML: <div class="loader"></div> */

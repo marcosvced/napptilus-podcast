@@ -3,6 +3,7 @@ import {useNormalizeString} from "~/src/core/common/infrastructure/composables/u
 import {podcastPresenter} from "~/src/core/podcast/presenters/PodcastPresenter";
 import AChip from "~/src/lib/ui/atoms/a-chip.vue";
 import AInput from "~/src/lib/ui/atoms/a-input.vue";
+import MPodcastCard from "~/src/lib/ui/molecules/m-podcast-card.vue";
 
 const store = podcastPresenter()
 const filter: Ref<string> = ref('')
@@ -24,16 +25,10 @@ const onInput = (payload: string) => {
       <a-input :value="filter" @update:value="onInput"/>
     </section>
     <ul class="p-podcast-browser__list">
-      <nuxt-link
-          v-for="podcast in podcastFiltered"
-          :key="podcast.id"
-          :to="{name: 'podcast-podcastId', params: {podcastId: podcast.id}}">
-        <li class="list__item -depth(100) -p-x(4) -p-b(8) -p-t(12)">
-          <nuxt-picture class="item__figure" format="webp" :src="podcast.img.url.x1" height="60" width="60"/>
-          <span class="item__title">{{ podcast.title }}</span>
-          <span class="item__author">Author: {{ podcast.author }}</span>
-        </li>
-      </nuxt-link>
+      <li v-for="podcast in podcastFiltered"
+          :key="podcast.id">
+        <m-podcast-card :id="podcast.id" :title="podcast.title" :img="podcast.img" :author="podcast.author"/>
+      </li>
     </ul>
   </main>
 </template>
@@ -69,41 +64,5 @@ const onInput = (payload: string) => {
   }
 }
 
-.list__item {
-  @apply -height(100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border-radius: 8px;
-  text-align: center;
-}
 
-.item__figure {
-  position: absolute;
-  border-radius: 50%;
-  overflow: hidden;
-  top: -50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
-.item__title {
-  text-transform: uppercase;
-  font-size: calc(calc(14 / 16) * 1rem);
-}
-
-.item__author {
-  font-size: calc(calc(12 / 16) * 1rem);
-  color: gray;
-}
-
-.item__title,
-.item__author {
-  white-space: nowrap;
-  max-width: calc(calc(150 / 16) * 1rem);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 </style>

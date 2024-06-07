@@ -7,3 +7,4 @@
 @import "_elements/link.css" layer(elements);
 @import "_elements/image.css" layer(elements);
 @import "_elements/headers.css" layer(elements);
+@import "_elements/paragraphs.css" layer(elements);
