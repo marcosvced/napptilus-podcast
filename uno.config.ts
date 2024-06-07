@@ -11,7 +11,7 @@ export default defineConfig({
         }),
     ],
     transformers: [
-        transformerDirectives(),
+        transformerDirectives({ enforce: 'pre' }),
     ],
     presets: [
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
