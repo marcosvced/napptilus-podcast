@@ -8,15 +8,12 @@ const {params: {podcastId: id}} = useRoute()
 
 const podcast = ref()
 
-useLoadingIndicator().start()
-onBeforeMount(async () => {
-  await episodeStore.getEpisodes(id)
-  try {
-    podcast.value = podcastStore.getPodcast(id)
-  } catch (e) {
-    console.error(e)
-  }
-})
+await episodeStore.getEpisodes(id)
+try {
+  podcast.value = podcastStore.getPodcast(id)
+} catch (e) {
+  console.error(e)
+}
 </script>
 
 <template>

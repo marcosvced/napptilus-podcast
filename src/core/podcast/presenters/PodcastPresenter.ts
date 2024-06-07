@@ -9,14 +9,17 @@ export const podcastPresenter = defineStore('podcasts', () => {
     const {$container} = useNuxtApp()
     const useCase = $container.get<GetPodcastsUseCase>(Dependencies.GET_PODCASTS)
     const state = ref()
+    const isLoading = ref(false)
 
     async function getPodcasts() {
+        isLoading.value = true
         try {
             state.value = null
             state.value = await useCase.execute()
         } catch (e) {
             throw UnexpectedException()
         }
+        isLoading.value = false
     }
 
     function getPodcast(id: PodcastId) {
@@ -33,6 +36,7 @@ export const podcastPresenter = defineStore('podcasts', () => {
         state,
         getPodcasts,
         getPodcast,
+        isLoading
     }
 
 })

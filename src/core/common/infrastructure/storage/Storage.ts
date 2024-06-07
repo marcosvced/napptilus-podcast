@@ -1,13 +1,9 @@
-import {type RemovableRef} from '@vueuse/core'
-import {JS} from 'refa'
-
 export interface DBConfig {
     storeName: string;
 }
 
 export class Storage {
     private readonly dbConfig: DBConfig
-    private storage: RemovableRef<any> = ref(null)
 
     constructor(config: DBConfig) {
         this.dbConfig = config

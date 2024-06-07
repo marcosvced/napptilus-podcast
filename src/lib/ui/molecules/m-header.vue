@@ -1,5 +1,13 @@
 <script setup lang="ts">
-const {isLoading} = useLoadingIndicator()
+import {podcastPresenter} from '~/src/core/podcast/presenters/PodcastPresenter'
+import {episodePresenter} from '~/src/core/episode/presenter/EpisodePresenter'
+
+const podcastStore = podcastPresenter()
+const episodeStore = episodePresenter()
+
+const isLoading = computed(()=> podcastStore.isLoading || episodeStore.isLoading)
+
+
 </script>
 
 <template>
